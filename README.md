@@ -30,9 +30,9 @@ You can also download the full result as a PDF report.
 
 ## Tech stack
 
-**Frontend:** React, Vite, SCSS — deployed on Vercel
+**Frontend:** React, Vite, SCSS - deployed on Vercel
 
-**Backend:** Node.js, Express, MongoDB — deployed on Render
+**Backend:** Node.js, Express, MongoDB - deployed on Render
 
 **Database:** MongoDB Atlas
 
