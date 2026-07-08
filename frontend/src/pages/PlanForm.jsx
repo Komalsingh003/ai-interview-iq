@@ -9,6 +9,11 @@ export default function PlanForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,6 +55,12 @@ export default function PlanForm() {
 
   return (
     <div className="plan-page">
+     <div className="plan-topbar">
+     <span className="plan-topbar-brand">AI Interview Coach</span>
+     <button className="logout-btn" onClick={handleLogout}>
+       Logout
+     </button>
+     </div>
       <h1>
         Create Your Custom <span className="highlight">Interview Plan</span>
       </h1>

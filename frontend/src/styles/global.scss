@@ -26,20 +26,18 @@ body {
 .auth-page {
   display: flex;
   min-height: 100vh;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1500px;
+  justify-content: center;
+  gap: 5rem;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem 2cm;
-  gap: 3rem;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
 }
 
 .auth-hero {
   flex: 1;
   min-width: 300px;
-  margin-left: 5rem;
-  margin-top: -1.9rem;
 
   .badge {
     background: rgba(236, 72, 153, 0.15);
@@ -83,7 +81,7 @@ body {
   background: var(--panel);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 18px;
-  padding: 2.8rem 3rem;
+  padding: 3rem;
   width: 100%;
   max-width: 460px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(236, 72, 153, 0.08);
@@ -126,8 +124,40 @@ body {
 .plan-page {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 2.5rem 1.5rem 3rem;
   text-align: center;
+
+  .plan-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .plan-topbar-brand {
+    font-weight: 700;
+    color: var(--pink-light);
+    font-size: 1rem;
+  }
+
+  .logout-btn {
+    background: transparent;
+    border: 1px solid #3a3a52;
+    color: var(--muted);
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+
+    &:hover {
+      border-color: var(--pink);
+      color: var(--pink-light);
+    }
+  }
 
   h1 { font-size: 2rem; .highlight { color: var(--pink); } }
   .subtitle { color: var(--muted); margin-bottom: 2rem; }
@@ -135,11 +165,11 @@ body {
   .plan-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     text-align: left;
   }
 
-  .col { background: var(--panel); border-radius: 14px; padding: 1.5rem; }
+  .col { background: var(--panel); border-radius: 16px; padding: 2rem; }
 
   label { font-weight: 600; display: block; margin-bottom: 0.6rem; }
   .required { background: var(--pink); color: white; font-size: 0.7rem; padding: 0.1rem 0.5rem; border-radius: 999px; margin-left: 0.5rem; }
@@ -260,4 +290,32 @@ body {
 
 @media (max-width: 768px) {
   .plan-form { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .auth-page {
+    flex-direction: column;
+    padding: 2rem 1.2rem;
+    gap: 2rem;
+  }
+
+  .auth-hero h1 { font-size: 1.9rem; }
+  .auth-hero p { max-width: 100%; }
+  .auth-card { max-width: 100%; padding: 1.75rem; }
+
+  .plan-page {
+    padding: 2rem 1.2rem;
+
+    h1 { font-size: 1.6rem; }
+  }
+
+  .col { padding: 1.2rem; }
+  .generate-btn { width: 100%; }
+
+  .results-page {
+    padding: 2rem 1.2rem;
+
+    .score-card { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    button { width: 100%; }
+  }
 }
